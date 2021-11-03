@@ -4,7 +4,7 @@
 #include <string>
 #include <cmath>
 
-std::string Byte_value(long value)
+std::string Byte_value(int64_t value)
 {
   if (value <= 1024)
     return std::to_string(value) + "b";
