@@ -11,7 +11,7 @@ char* Check::initArray()
   std::mt19937_64 mt(rd());
   std::uniform_int_distribution<int64_t> dist(0, Check::size);
   char* arr = new char[Check::size];
-  for (long i=0; i < size; i+=16)
+  for (int64_t i=0; i < size; i+=16)
     arr[i] = dist(mt);
   return arr;
 }
@@ -29,7 +29,7 @@ double Check::run() {
   using std::chrono::milliseconds;
   char k = 0;
   char* arr = initArray();
-  for (long i = 0; i < Check::size; i += 16)
+  for (int64_t i = 0; i < Check::size; i += 16)
     k = arr[i];
   auto t1 = std::chrono::high_resolution_clock::now();
   switch (Check::type)
@@ -63,7 +63,7 @@ void Check::_random(char* arr, char& k)
 {
   std::random_device rd;
   std::mt19937_64 mt(rd());
-  std::uniform_int_distribution<long> dist(0, Check::size/16);
+  std::uniform_int_distribution<int64_t> dist(0, Check::size/16);
   for (int64_t i=0; i < Check::size/16; i++)
     k = arr[dist(mt)];
 }
