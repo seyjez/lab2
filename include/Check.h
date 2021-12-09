@@ -1,4 +1,4 @@
-//Copyright by C++_developers1488
+//Copyright by seyjez
 
 #ifndef INCLUDE_CHECK_HPP_
 #define INCLUDE_CHECK_HPP_
